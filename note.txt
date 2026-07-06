@@ -1,0 +1,101 @@
+Mình cần làm một website giới thiệu cho cộng đồng Discord STRIKE OS.
+Không cần quá nhiều hiệu ứng, ưu tiên giao diện sạch, hiện đại
+Yêu cầu giao diện như đã bàn giao giống như website Xilly  https://www.xilly.net/ và https://framesynclabs.com/
+•	Tông màu chủ đạo: Đen + Tím. High Contrast
+liquid glass càng tốt ạ
+
+Section 1 – Hero / Giới thiệu
+•	Logo STRIKE OS.
+•	Tiêu đề: Designed for gamers. Optimized for performance. Built for everyone.
+•	Mô tả ngắn về STRIKE OS.
+STRIKE OS là phiên bản Windows Custom được xây dựng với mục tiêu mang lại hiệu năng tối đa, độ ổn định cao và trải nghiệm mượt mà cho game thủ, người dùng chuyên nghiệp và những ai muốn khai thác tối đa sức mạnh phần cứng.
+•	1 nút: Join Discord 
+Section 2 – Performance / Benchmark
+Bạn cứ dựng phần khung trước rồi mình sẽ tiến hành benchmark thực tế và gửi bạn sau
+Section 3 – Services
+•	Gồm 4 dịch vụ.
+1. Strike OS - Window Custom - STRIKE OS là dự án Windows Custom được phát triển với định hướng tối ưu hiệu năng, độ ổn định và trải nghiệm người dùng.
+mô tả : Giảm PROCESS nền và dịch vụ không cần thiết / Tối ưu Registry & Services/ Cải thiện thời gian phản hồi của hệ thống/ Giảm độ trễ đầu vào (Input Latency)/ Tối ưu CPU, RAM và GPU
+
+2. Window Optimization – Optimize your Windows system for maximum performance
+mô tả : Lựa chọn Driver , chipset Phù hợp với phần cứng!!
+Network Optimization (tối ưu mạng & độ ổn định kết nối) / Input Latency Reduction (giảm độ trễ đầu vào)/ Registry Optimization (tinh chỉnh Registry) / Windows Gaming Optimization Service Fine-tuning (tối ưu Windows Services) / RAM Usage Optimization (tối ưu sử dụng bộ nhớ )/ Disable background processes không cần thiết
+
+3. PC Building - Tư vấn và xây dựng cấu hình phù hợp với nhu cầu sử dụng
+mô tả : Tư vấn cấu hình phù hợp theo nhu cầu và ngân sách (Gaming / Streaming / Đồ họa / Làm việc)
+Lựa chọn linh kiện chính hãng, tương thích tối ưu giữa CPU, RAM, GPU và mainboard. Lắp ráp hệ thống chuyên nghiệp, đi dây gọn gàng và thẩm mỹ
+
+4. Tuning Bios - Tối ưu BIOS
+mô tả : Tối ưu EXPO / DOCP , Memory Frequency.  FCLK Dành cho cả AM4 và AM5
+Tinh chỉnh Precision Boost Overdrive (PBO) , Curve Optimizer Undervolt của từng core CPU
+Bật High Bandwidth Support , Low Latency Support
+Phù hợp cho:
+
+CPU AMD Ryzen X3D (5700X3D / 5800X3D / 7800X3D / 7950X3D / 9850X3D / 9800X3D)
+
+Section 4 – Feedback
+•	Avatar
+•	Tên người dùng
+•	Nội dung đánh giá
+•	Hiển thị dạng slider/carousel hoặc card.
+
+
+prompt AI
+Hãy đóng vai là một Chuyên gia Front-End Developer cấp cao, có gu thẩm mỹ UI/UX hiện đại và tinh tế. Tôi cần bạn viết mã nguồn cho một trang Landing Page duy nhất (Single-Page) bằng HTML thuần, CSS thuần và JavaScript thuần (không dùng bất kỳ framework nào như React, Next.js hay Tailwind, không dùng thư viện ngoài ngoại trừ FontAwesome cho icon nếu cần). 
+
+Trang web này giới thiệu cho cộng đồng Discord "STRIKE OS" (một phiên bản Windows Custom tối ưu cho game thủ).
+
+### YÊU CẦU PHONG CÁCH UI/UX & LAYOUT (Cực kỳ quan trọng):
+- Giao diện lấy cảm hứng từ phong cách của website Xilly: Sạch, hiện đại, không lạm dụng hiệu ứng rườm rà nhưng cực kỳ cao cấp.
+- Tông màu chủ đạo: Đen sâu (Deep Black/Dark Indigo làm nền tổng) + Tím Neon (High Contrast) làm màu nhấn.
+- Áp dụng phong cách thiết kế Liquid Glass (Kính lỏng/Thủy tinh mờ chảy mượt): Sử dụng `backdrop-filter: blur()`, viền gradient mỏng dính màu tím mờ, đổ bóng nhẹ phát sáng (Purple Glow) cho các thẻ thành phần (Card).
+- Typography: Sử dụng font chữ hiện đại, scannable tốt (khuyến khích font Montserrat hoặc tương đương), phân cấp thị giác rõ ràng.
+- Toàn bộ các nút bấm hành động (CTA) phải thiết kế "đằm", kích thước lớn (chiều cao khoảng 52px), bo góc mịn, có hiệu ứng phát sáng mượt mà khi di chuột qua (hover transition).
+- Tối ưu hóa hiển thị (Responsive) mượt mà trên cả máy tính (PC) và thiết bị di động (Mobile). Các mảng miếng gom cụm chặt chẽ, không thưa thớt, không vỡ layout.
+
+### CẤU TRÚC 4 SECTION TRÊN TRANG INDEX:
+
+#### Section 1 – Hero / Giới thiệu
+- Bố cục: 2 cột thoáng đãng trên PC.
+- Nội dung cột trái: 
+  + Tiêu đề lớn (High Contrast, viết hoa nghệ thuật): "Designed for gamers. Optimized for performance. Built for everyone."
+  + Mô tả ngắn: "STRIKE OS là phiên bản Windows Custom được xây dựng với mục tiêu mang lại hiệu năng tối đa, độ ổn định cao và trải nghiệm mượt mà cho game thủ, người dùng chuyên nghiệp và những ai muốn khai thác tối đa sức mạnh phần cứng."
+  + 1 nút bấm CTA lớn: "Join Discord" (Nền tím neon, hover phát sáng).
+- Nội dung cột phải: Khu vực hiển thị Logo STRIKE OS (thiết kế placeholder vòng tròn phát sáng glow màu tím dạng lỏng ẩn phía sau để tạo chiều sâu).
+
+#### Section 2 – Performance / Benchmark
+- Vì thông số thực tế sẽ cập nhật sau, hãy thiết kế một khung Layout Placeholder sạch sẽ và hiện đại.
+- Chia thành một Grid 3 hoặc 4 cột dạng .liquid-glass-card. Mỗi cột tương ứng với một tựa game (Ví dụ: Valorant, CS2, LMHT...).
+- Bên trong mỗi card tựa game, thiết kế sẵn 2 thanh tiến trình (Progress Bar) rỗng nằm song song để so sánh trực quan: Một thanh ghi "Stock Windows" (màu xám nhạt), một thanh màu tím sáng ghi "STRIKE OS".
+
+#### Section 3 – Services (Gồm 4 dịch vụ chính xếp dạng Grid 2x2 hoặc tương đương)
+Tất cả các thẻ dịch vụ đều áp dụng hiệu ứng .liquid-glass-card, các dòng mô tả con sử dụng dấu chấm bullet màu tím neon mảnh ở đầu dòng:
+
+1. Strike OS - Window Custom
+   - Nội dung: STRIKE OS là dự án Windows Custom được phát triển với định hướng tối ưu hiệu năng, độ ổn định và trải nghiệm người dùng.
+   - Mô tả: Giảm PROCESS nền và dịch vụ không cần thiết / Tối ưu Registry & Services / Cải thiện thời gian phản hồi của hệ thống / Giảm độ trễ đầu vào (Input Latency) / Tối ưu CPU, RAM và GPU.
+
+2. Window Optimization
+   - Tiêu đề phụ: Optimize your Windows system for maximum performance
+   - Mô tả: Lựa chọn Driver, chipset phù hợp với phần cứng / Network Optimization (tối ưu mạng & độ ổn định kết nối) / Input Latency Reduction (giảm độ trễ đầu vào) / Registry Optimization (tinh chỉnh Registry) / Windows Gaming Optimization Service Fine-tuning (tối ưu Windows Services) / RAM Usage Optimization (tối ưu sử dụng bộ nhớ) / Disable background processes không cần thiết.
+
+3. PC Building
+   - Tiêu đề phụ: Tư vấn và xây dựng cấu hình phù hợp với nhu cầu sử dụng
+   - Mô tả: Tư vấn cấu hình phù hợp theo nhu cầu và ngân sách (Gaming / Streaming / Đồ họa / Làm việc) / Lựa chọn linh kiện chính hãng, tương thích tối ưu giữa CPU, RAM, GPU và mainboard. Lắp ráp hệ thống chuyên nghiệp, đi dây gọn gàng và thẩm mỹ.
+
+4. Tuning Bios
+   - Tiêu đề phụ: Tối ưu BIOS
+   - Mô tả: Tối ưu EXPO / DOCP, Memory Frequency. FCLK Dành cho cả AM4 và AM5 / Tinh chỉnh Precision Boost Overdrive (PBO), Curve Optimizer Undervolt của từng core CPU / Bật High Bandwidth Support, Low Latency Support.
+   - Điểm nhấn thị giác dưới đáy card: Tạo một cái Tag/Badge nhỏ màu tím nổi bật ghi: "Phù hợp cho: CPU AMD Ryzen X3D (5700X3D / 5800X3D / 7800X3D / 7950X3D / 9850X3D / 9800X3D)".
+
+#### Section 4 – Feedback
+- Thiết kế một cụm Carousel/Slider cuộn ngang tự động (Infinite Horizontal Scroll) hoặc dạng Grid Card bằng CSS/JS sạch.
+- Mỗi Card đánh giá bao gồm: Avatar tròn, Tên người dùng (màu tím nhạt), và Nội dung đánh giá. Toàn bộ card dùng hiệu ứng .liquid-glass-card đồng bộ.
+
+### YÊU CẦU ĐẦU RA:
+Hãy trả về cho tôi mã nguồn hoàn chỉnh gồm:
+1. File `index.html` với cấu trúc thẻ ngữ nghĩa chuẩn (semantic tags), liên kết CSS và JS hợp lý.
+2. File `style.css` chứa toàn bộ cấu trúc responsive, biến màu sắc `:root`, các hiệu ứng hover, transition mượt mà và đặc biệt là class xử lý hiệu ứng kính lỏng `.liquid-glass-card`.
+3. File `script.js` xử lý cuộn mượt (Smooth Scroll) hoặc các chuyển động cơ bản của Slider Feedback nếu có. Code sạch, tối ưu hiệu năng chạy trực tiếp trên GPU (dùng transform/opacity).
+
+
