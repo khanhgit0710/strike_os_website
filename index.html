@@ -12,10 +12,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap"
         rel="stylesheet">
     <!-- Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <!-- CSS -->
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="./css/base.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="./assets/logo/logo_S.png">
 
 </head>
 
@@ -46,18 +49,18 @@
         <section id="hero" class="hero-section">
             <div class="container hero-content">
                 <div class="hero-left">
-                    <h1>
-                        FORGED FOR GAMERS.<br>
+                    <h1 class="reveal reveal-left">
+                        TRIKE OS.<br>
                         <span class="highlight">TUNED FOR MAXIMUM PERFORMANCE.</span><br>
                         BUILT FOR EVERYONE.
                     </h1>
-                    <p class="desc">
+                    <p class="desc reveal reveal-left delay-1">
                         A highly-tuned Windows OS engineered for maximum framerates, zero bloatware, and ultra-low
                         latency. Built for competitive gamers and power users who demand peak hardware performance.
                     </p>
 
                     <!-- Game Logos Marquee -->
-                    <div class="hero-logos-marquee">
+                    <div class="hero-logos-marquee reveal reveal-left delay-2">
                         <div class="marquee-track">
                             <img src="./assets/logo/logo_game/lgoo_pubg.jpg" alt="PUBG">
                             <img src="./assets/logo/logo_game/logo_csgo.png" alt="CS:GO">
@@ -75,14 +78,24 @@
                         </div>
                     </div>
 
-                    <a href="https://discord.gg/your_invite_link" class="btn btn-primary btn-large cta-btn"
-                        target="_blank">
-                        <i class="fa-brands fa-discord"></i> Join Discord
-                    </a>
+                    <div class="hero-buttons reveal reveal-left delay-3" style="display: flex; gap: 20px; align-items: center;">
+                        <a href="https://discord.gg/your_invite_link" class="btn btn-primary btn-large cta-btn"
+                            target="_blank">
+                            <i class="fa-brands fa-discord"></i> Join Discord
+                        </a>
+                        <a href="#services" class="btn btn-purple btn-large">
+                            <i class="fa-solid fa-server"></i> Services
+                        </a>
+                    </div>
                 </div>
                 <div class="hero-right">
-                    <div class="logo-placeholder liquid-glass-card glow-element">
-                        <span class="logo-text-large">STRIKE</span>
+                    <div class="hero-3d-slider">
+                        <div class="slider-container">
+                            <img src="./assets/Build PC.png" alt="Build PC" class="slide-img active">
+                            <img src="./assets/Tuning Bios.png" alt="Tuning Bios" class="slide-img">
+                            <img src="./assets/Window Custom.png" alt="Window Custom" class="slide-img">
+                            <img src="./assets/Window Optimization.png" alt="Window Optimization" class="slide-img">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -99,139 +112,83 @@
         </section>
 
         <!-- SECTION 2: PERFORMANCE -->
-        <section id="performance" class="performance-section section-padding">
+        <section id="performance" class="performance-section section-padding" style="padding-bottom: 10px;">
             <div class="container">
-                <div class="section-title text-center">
+                <div class="section-title text-center reveal">
                     <h2>Performance Benchmark</h2>
                     <p>Real-world performance comparison (Examples)</p>
                 </div>
 
-                <div class="benchmark-grid">
-                    <!-- Game 1: CS2 -->
-                    <div class="benchmark-card new-bm-card liquid-glass-card hover-glow">
-                        <div class="bm-header">
-                            <div class="bm-title">
-                                <h3>Counter-Strike 2</h3>
-                                <p>Frames Per Second</p>
-                            </div>
-                            <div class="bm-icon">
-                                <img src="./assets/logo/logo_game/logo_csgo.png" alt="CS2 Logo"
-                                    onerror="this.src='https://via.placeholder.com/40/1a1a2e/b5179e?text=CS2'">
+                <!-- 3D Slider Container -->
+                <div class="benchmark-3d-wrapper" style="margin-top: 50px;">
+                    <!-- Bottom Right Controls -->
+                    <div class="slider-bottom-right">
+                        <a href="#services" class="see-services-link">SEE SERVICES <i class="fa-solid fa-chevron-right" style="font-size: 10px;"></i></a>
+                        <div class="slider-logos">
+                            <img src="./assets/logo/logo_game/lgoo_pubg.jpg" alt="PUBG" class="slider-logo active" data-index="0">
+                            <img src="./assets/logo/logo_game/logo_left4dead.jpg" alt="Left4Dead" class="slider-logo" data-index="1">
+                            <img src="./assets/logo/logo_game/logo_csgo.png" alt="CS2" class="slider-logo" data-index="2">
+                            <img src="./assets/logo/logo_game/logo_gta5.png" alt="GTA 5" class="slider-logo" data-index="3">
+                            <img src="./assets/logo/logo_game/logo_gta.png" alt="GTA 5 2" class="slider-logo" data-index="4">
+                            <img src="./assets/logo/logo_game/logo_valorant.png" alt="Valorant" class="slider-logo" data-index="5">
+                        </div>
+                    </div>
+                    
+                    <div class="benchmark-3d-slider">
+                        <!-- PUBG -->
+                        <div class="slider-item active" data-index="0">
+                            <img src="./assets/benchmark_2.jpg" alt="PUBG Benchmark">
+                            <div class="slider-watermark">
+                                <div class="fps-value">82 <span class="fps-label">FPS</span></div>
+                                <div class="fps-desc">Stock -> 82 FPS STRIKE-tuned</div>
                             </div>
                         </div>
-                        <div class="bm-stats">
-                            <span class="old-fps">624</span> <span class="arrow">&rarr;</span> <span
-                                class="new-fps highlight" data-target="1054">0</span>
-                            <span class="bm-badge">+69%</span>
+                        <!-- Left4Dead -->
+                        <div class="slider-item next" data-index="1">
+                            <img src="./assets/benchmark_4.jpg" alt="Left4Dead Benchmark">
+                            <div class="slider-watermark">
+                                <div class="fps-value">120 <span class="fps-label">FPS</span></div>
+                                <div class="fps-desc">Stock -> 120 FPS STRIKE-tuned</div>
+                            </div>
                         </div>
-                        <div class="progress-bar new-pb">
-                            <div class="progress-fill neon-red-glow" data-width="69%"></div>
+                        <!-- CS2 -->
+                        <div class="slider-item hidden" data-index="2">
+                            <img src="./assets/bench_mark_cs2.PNG" alt="CS2 Benchmark">
+                            <div class="slider-watermark">
+                                <div class="fps-value">466 <span class="fps-label">FPS</span></div>
+                                <div class="fps-desc">9800X3D- 32gb Ram bus 6400 - 1TB - 3070ti</div>
+                            </div>
+                        </div>
+                        <!-- GTA5 -->
+                        <div class="slider-item hidden" data-index="3">
+                            <img src="./assets/bench_mark_gta5.PNG" alt="GTA 5 Benchmark">
+                            <div class="slider-watermark">
+                                <div class="fps-value">529 <span class="fps-label">FPS</span></div>
+                                <div class="fps-desc">9800X3D- 32gb Ram bus 6400 - 1TB - 3070ti</div>
+                            </div>
+                        </div>
+                        <!-- GTA52 -->
+                        <div class="slider-item hidden" data-index="4">
+                            <img src="./assets/benchmark_gta.png" alt="GTA 5 Benchmark 2">
+                            <div class="slider-watermark">
+                                <div class="fps-value">565 <span class="fps-label">FPS</span></div>
+                                <div class="fps-desc">9800X3D- 32gb Ram bus 6400 - 1TB - 3070ti</div>
+                            </div>
+                        </div>
+                        <!-- Valorant -->
+                        <div class="slider-item prev" data-index="5">
+                            <img src="./assets/bench_mark_valorant.png" alt="Valorant Benchmark">
+                            <div class="slider-watermark">
+                                <div class="fps-value">462 <span class="fps-label">FPS</span></div>
+                                <div class="fps-desc">14600kf - 32gb ram bus 3600- 512gb - 5060</div>
+                            </div>
                         </div>
                     </div>
 
-                    <!-- System Card -->
-                    <div class="benchmark-card new-bm-card system-card liquid-glass-card hover-glow">
-                        <div class="bm-header">
-                            <div class="bm-title">
-                                <h3>System</h3>
-                                <p>Overall Latency</p>
-                            </div>
-                            <div class="bm-badge-red">GAME-READY</div>
-                        </div>
-                        <div class="bm-stats system-stats">
-                            <p>Up to 70% Delay & Overhead Reduction</p>
-                        </div>
-                        <div class="progress-bar new-pb">
-                            <div class="progress-fill neon-red-glow" data-width="100%"></div>
-                        </div>
-                    </div>
-
-                    <!-- Game 2: Valorant -->
-                    <div class="benchmark-card new-bm-card liquid-glass-card hover-glow">
-                        <div class="bm-header">
-                            <div class="bm-title">
-                                <h3>Valorant</h3>
-                                <p>Frames Per Second</p>
-                            </div>
-                            <div class="bm-icon">
-                                <img src="./assets/logo/logo_game/logo_valorant.png" alt="Valorant Logo"
-                                    onerror="this.src='https://via.placeholder.com/40/1a1a2e/b5179e?text=VAL'">
-                            </div>
-                        </div>
-                        <div class="bm-stats">
-                            <span class="old-fps">344</span> <span class="arrow">&rarr;</span> <span
-                                class="new-fps highlight" data-target="627">0</span>
-                            <span class="bm-badge">+82%</span>
-                        </div>
-                        <div class="progress-bar new-pb">
-                            <div class="progress-fill neon-red-glow" data-width="82%"></div>
-                        </div>
-                    </div>
-
-                    <!-- Game 3: Fortnite -->
-                    <div class="benchmark-card new-bm-card liquid-glass-card hover-glow">
-                        <div class="bm-header">
-                            <div class="bm-title">
-                                <h3>Fortnite</h3>
-                                <p>Frames Per Second</p>
-                            </div>
-                            <div class="bm-icon">
-                                <img src="./assets/logo/logo_game/logo_fortnite.png" alt="Fortnite Logo"
-                                    onerror="this.src='https://via.placeholder.com/40/1a1a2e/b5179e?text=FN'">
-                            </div>
-                        </div>
-                        <div class="bm-stats">
-                            <span class="old-fps">392</span> <span class="arrow">&rarr;</span> <span
-                                class="new-fps highlight" data-target="585">0</span>
-                            <span class="bm-badge">+49%</span>
-                        </div>
-                        <div class="progress-bar new-pb">
-                            <div class="progress-fill neon-red-glow" data-width="49%"></div>
-                        </div>
-                    </div>
-
-                    <!-- Game 4: Rainbow Six -->
-                    <div class="benchmark-card new-bm-card liquid-glass-card hover-glow">
-                        <div class="bm-header">
-                            <div class="bm-title">
-                                <h3>Rainbow Six</h3>
-                                <p>Frames Per Second</p>
-                            </div>
-                            <div class="bm-icon">
-                                <img src="./assets/logo/logo_game/logo_rainbowsix.png" alt="R6 Logo"
-                                    onerror="this.src='https://via.placeholder.com/40/1a1a2e/b5179e?text=R6'">
-                            </div>
-                        </div>
-                        <div class="bm-stats">
-                            <span class="old-fps">642</span> <span class="arrow">&rarr;</span> <span
-                                class="new-fps highlight" data-target="914">0</span>
-                            <span class="bm-badge">+42%</span>
-                        </div>
-                        <div class="progress-bar new-pb">
-                            <div class="progress-fill neon-red-glow" data-width="42%"></div>
-                        </div>
-                    </div>
-
-                    <!-- Game 5: Black Ops 7 -->
-                    <div class="benchmark-card new-bm-card liquid-glass-card hover-glow">
-                        <div class="bm-header">
-                            <div class="bm-title">
-                                <h3>PUBG</h3>
-                                <p>Frames Per Second</p>
-                            </div>
-                            <div class="bm-icon">
-                                <img src="./assets/logo/logo_game/lgoo_pubg.jpg" alt="PUBG Logo"
-                                    onerror="this.src='https://via.placeholder.com/40/1a1a2e/b5179e?text=PUBG'">
-                            </div>
-                        </div>
-                        <div class="bm-stats">
-                            <span class="old-fps">286</span> <span class="arrow">&rarr;</span> <span
-                                class="new-fps highlight" data-target="404">0</span>
-                            <span class="bm-badge">+41%</span>
-                        </div>
-                        <div class="progress-bar new-pb">
-                            <div class="progress-fill neon-red-glow" data-width="41%"></div>
-                        </div>
+                    <!-- Navigation Buttons -->
+                    <div class="slider-nav">
+                        <button class="slider-nav-btn btn-prev"><i class="fa-solid fa-chevron-left"></i></button>
+                        <button class="slider-nav-btn btn-next"><i class="fa-solid fa-chevron-right"></i></button>
                     </div>
                 </div>
             </div>
@@ -240,97 +197,81 @@
         <!-- SECTION 3: SERVICES -->
         <section id="services" class="services-section section-padding">
             <div class="container">
-                <div class="section-title text-center">
-                    <h2>Our Services</h2>
-                    <p>Comprehensive solutions for your system</p>
+                <div class="section-title text-center reveal">
+                    <h2>SYSTEM OPTIMIZATION</h2>
+                    <p>Engineered to eliminate bottleneck and maximize performance.</p>
                 </div>
 
                 <div class="services-grid">
-                    <!-- Service 1 (Span 12 / 100%) -->
-                    <div class="service-card span-12 liquid-glass-card hover-glow">
-                        <h3><i class="fa-brands fa-windows"></i> Strike OS - Window Custom</h3>
-                        <p class="service-subtitle">STRIKE OS is a Custom Windows project developed with a focus on
-                            optimizing performance, stability, and user experience.</p>
-                        <ul class="service-list">
-                            <li>Reduce background processes and unnecessary services</li>
-                            <li>Optimize Registry & Services</li>
-                            <li>Improve system response time</li>
-                            <li>Reduce Input Latency</li>
-                            <li>Optimize CPU, RAM, and GPU</li>
-                        </ul>
-                    </div>
-
-                    <!-- Service 2 -->
-                    <div class="service-card span-7 liquid-glass-card hover-glow">
-                        <h3><i class="fa-solid fa-gauge-high"></i> Window Optimization</h3>
-                        <p class="service-subtitle">Optimize your Windows system for maximum performance</p>
-                        <ul class="service-list">
-                            <li>Select appropriate drivers and chipsets for your hardware</li>
-                            <li>Network Optimization (improve connection stability)</li>
-                            <li>Input Latency Reduction</li>
-                            <li>Registry Optimization</li>
-                            <li>Windows Gaming Optimization Service Fine-tuning</li>
-                            <li>RAM Usage Optimization</li>
-                            <li>Disable unnecessary background processes</li>
-                        </ul>
-                    </div>
-
-                    <!-- Service 3 -->
-                    <div class="service-card span-5 liquid-glass-card hover-glow">
-                        <h3><i class="fa-solid fa-screwdriver-wrench"></i> PC Building</h3>
-                        <p class="service-subtitle">Consultation and building configurations suited to your needs</p>
-                        <ul class="service-list">
-                            <li>Recommend suitable configurations (Gaming / Streaming / Graphics / Work)</li>
-                            <li>Select genuine, optimally compatible components</li>
-                            <li>Professional system assembly</li>
-                            <li>Neat and aesthetic cable management</li>
-                        </ul>
-                    </div>
-
-                    <!-- Service 4 -->
-                    <div class="service-card span-7 liquid-glass-card hover-glow flex-column-between">
-                        <div>
-                            <h3><i class="fa-solid fa-microchip"></i> Tuning Bios</h3>
-                            <p class="service-subtitle">BIOS Optimization</p>
-                            <ul class="service-list">
-                                <li>Optimize EXPO / DOCP, Memory Frequency. FCLK for both AM4 and AM5</li>
-                                <li>Fine-tune Precision Boost Overdrive (PBO) and Curve Optimizer Undervolt per CPU core
-                                </li>
-                                <li>Enable High Bandwidth Support and Low Latency Support</li>
-                            </ul>
+                    <!-- Card 1 -->
+                    <div class="service-card reveal reveal-scale">
+                        <div class="service-video-placeholder">
+                            <div class="video-overlay-text">POST-INSTALL OPTIMIZATION TIMELAPSE</div>
                         </div>
-                        <div class="cpu-tags-wrapper">
-                            <span class="badge-title">Suitable for CPU AMD Ryzen X3D:</span>
-                            <div class="cpu-tags">
-                                <span class="service-badge glow-element">5700X3D</span>
-                                <span class="service-badge glow-element">5800X3D</span>
-                                <span class="service-badge glow-element">7800X3D</span>
-                                <span class="service-badge glow-element">7950X3D</span>
-                                <span class="service-badge glow-element">9850X3D</span>
-                                <span class="service-badge glow-element">9800X3D</span>
+                        <div class="service-content">
+                            <h4 class="service-subtitle">FULL XILLY SETUP</h4>
+                            <h3 class="service-title">Core Optimization</h3>
+                            <div class="service-price">
+                                <span class="price-val">$85</span>
+                                <span class="price-dur">/ 30 MIN SESSION</span>
                             </div>
+                            <p class="service-desc">The full Xilly tune-up without CPU, RAM, or GPU overclocking. We set up your BIOS, Windows, drivers, and games so your PC runs the way it should.</p>
+                            
+                            <ul class="service-features">
+                                <li>BIOS setup + hidden BIOS settings</li>
+                                <li>XMP / EXPO turned on and checked for crashes</li>
+                                <li>13th/14th gen Intel crash fixes if needed</li>
+                                <li>BIOS update if needed</li>
+                                <li>XillyOS clean install or keep your current Windows</li>
+                                <li>Your apps still work — no speed trade-off</li>
+                                <li>Controller overclocking + small fixes</li>
+                                <li>Post-service tool for apps, configs, and Windows settings</li>
+                                <li>Service report with before/after results and support notes</li>
+                                <li>3 days of help</li>
+                            </ul>
+                            
+                            <a href="#" class="btn btn-secondary w-100">GET CORE OPTIMIZATION</a>
                         </div>
                     </div>
 
-                    <!-- Service 5 -->
-                    <div class="service-card span-5 liquid-glass-card hover-glow">
-                        <h3><i class="fa-solid fa-headset"></i> Premium Support</h3>
-                        <p class="service-subtitle">24/7 dedicated technical support and consulting</p>
-                        <ul class="service-list">
-                            <li>Priority hardware diagnostics & repairs</li>
-                            <li>Remote troubleshooting sessions</li>
-                            <li>Overclocking & Undervolting guidance</li>
-                            <li>Personalized software tuning</li>
-                        </ul>
+                    <!-- Card 2 -->
+                    <div class="service-card flagship-card reveal reveal-scale">
+                        <div class="flagship-badge">FLAGSHIP</div>
+                        <div class="service-video-placeholder placeholder-2">
+                            <div class="video-overlay-text">WORLD RECORD CS2 (9800X3D + 5080)</div>
+                        </div>
+                        <div class="service-content">
+                            <h4 class="service-subtitle text-blue">FLAGSHIP DESKTOP OPTIMIZATION</h4>
+                            <h3 class="service-title">Competitive Optimization</h3>
+                            <div class="service-price">
+                                <span class="price-val">$250</span>
+                                <span class="price-dur">/ 2 HOUR SESSION</span>
+                            </div>
+                            <p class="service-desc">Everything in Core plus deep CPU, RAM, and GPU overclocking. Built for high-end desktops where every frame matters.</p>
+                            
+                            <ul class="service-features features-blue">
+                                <li>Everything in Core Optimization</li>
+                                <li>CPU, RAM, and GPU overclocking</li>
+                                <li>AMD PBO and Curve Optimizer setup</li>
+                                <li>DDR5 tuning — Micron, Hynix, and Samsung kits</li>
+                                <li>DDR4 tuning — B-die, DJR, and more</li>
+                                <li>Intel CPU overclocking with custom voltage</li>
+                                <li>13th/14th gen Intel voltage safety fixes if needed</li>
+                                <li>GPU overclocking, Afterburner tuning, and undervolting</li>
+                                <li>Service report with before/after results and support notes</li>
+                                <li>7 days of follow-up support</li>
+                            </ul>
+                            
+                            <a href="#" class="btn btn-primary w-100 btn-blue">GET THE MOST PERFORMANCE</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
-
         <!-- SECTION 4: FEEDBACK -->
         <section id="feedback" class="feedback-section section-padding">
             <div class="container">
-                <div class="section-title text-center">
+                <div class="section-title text-center reveal">
                     <h2>Client Feedback</h2>
                     <p>Community Feedback</p>
                 </div>
@@ -338,71 +279,101 @@
                 <div class="slider-container">
                     <div class="feedback-slider" id="feedback-slider">
                         <!-- Feedback Item 1 -->
-                        <div class="feedback-card liquid-glass-card">
+                        <div class="feedback-card liquid-glass-card reveal">
                             <div class="feedback-header">
                                 <div class="user-info">
-                                    <img src="https://ui-avatars.com/api/?name=User+A&background=random" alt="Avatar"
-                                        class="avatar">
+                                    <img src="https://i.pravatar.cc/150?u=primme" alt="Avatar" class="avatar">
                                     <div class="user-meta">
-                                        <h4 class="username">User A</h4>
-                                        <div class="stars">
-                                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
-                                                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
-                                                class="fa-solid fa-star"></i>
-                                        </div>
+                                        <h4 class="username">Primme</h4>
+                                        <span class="user-role">Team Razer Content Creator</span>
                                     </div>
+                                </div>
+                                <div class="stars">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                                 </div>
                             </div>
                             <div class="feedback-body">
-                                "The OS runs extremely smooth, FPS in Valorant increased significantly compared to stock
-                                Windows. Latency is very low, flicking the mouse feels much more accurate."
+                                "I really didn't think an optimization could completely fix input lag, wow..."
                             </div>
                             <div class="feedback-footer">
-                                <span class="verify"><i class="fa-solid fa-circle-check"></i> Verified Buyer</span>
-                                <span class="date">05/07/2026</span>
+                                <span class="verify"><i class="fa-solid fa-circle-check"></i> Verified Review</span>
+                                <div class="social-icons">
+                                    <i class="fa-brands fa-twitch"></i>
+                                    <i class="fa-brands fa-x-twitter"></i>
+                                    <i class="fa-brands fa-instagram"></i>
+                                </div>
                             </div>
                         </div>
 
                         <!-- Feedback Item 2 -->
-                        <div class="feedback-card liquid-glass-card">
+                        <div class="feedback-card liquid-glass-card reveal">
                             <div class="feedback-header">
                                 <div class="user-info">
-                                    <img src="https://ui-avatars.com/api/?name=Gamer+Pro&background=random" alt="Avatar"
-                                        class="avatar">
+                                    <img src="https://i.pravatar.cc/150?u=1962" alt="Avatar" class="avatar">
                                     <div class="user-meta">
-                                        <h4 class="username">Gamer_Pro</h4>
-                                        <div class="stars">
-                                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
-                                                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
-                                                class="fa-solid fa-star"></i>
-                                        </div>
+                                        <h4 class="username">1962</h4>
+                                        <span class="user-role">Content Creator (40K)</span>
                                     </div>
+                                </div>
+                                <div class="stars">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                                 </div>
                             </div>
                             <div class="feedback-body">
-                                "The BIOS Tuning service is truly top-notch, my 7800X3D combo runs at max performance,
-                                cooler, and boots very fast. Will support the team for a long time!"
+                                "I've been streaming with the PC optimized by STRIKE OS and it feels spectacular."
                             </div>
                             <div class="feedback-footer">
-                                <span class="verify"><i class="fa-solid fa-circle-check"></i> Verified Buyer</span>
-                                <span class="date">01/07/2026</span>
+                                <span class="verify"><i class="fa-solid fa-circle-check"></i> Verified Review</span>
+                                <div class="social-icons">
+                                    <i class="fa-brands fa-twitch"></i>
+                                    <i class="fa-brands fa-x-twitter"></i>
+                                    <i class="fa-brands fa-instagram"></i>
+                                </div>
                             </div>
                         </div>
 
                         <!-- Feedback Item 3 -->
-                        <div class="feedback-card liquid-glass-card">
+                        <div class="feedback-card liquid-glass-card reveal">
                             <div class="feedback-header">
                                 <div class="user-info">
-                                    <img src="https://ui-avatars.com/api/?name=Hieu+PC&background=random" alt="Avatar"
+                                    <img src="https://i.pravatar.cc/150?u=gamerpro" alt="Avatar"
+                                        class="avatar">
+                                    <div class="user-meta">
+                                        <h4 class="username">Gamer_Pro</h4>
+                                        <span class="user-role">Competitive Player</span>
+                                    </div>
+                                </div>
+                                <div class="stars">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                        class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                        class="fa-solid fa-star"></i>
+                                </div>
+                            </div>
+                            <div class="feedback-body">
+                                "The BIOS Tuning service is truly top-notch, my 7800X3D combo runs at max performance,
+                                cooler, and boots very fast."
+                            </div>
+                            <div class="feedback-footer">
+                                <span class="verify"><i class="fa-solid fa-circle-check"></i> Verified Review</span>
+                                <span class="date">01/07/2026</span>
+                            </div>
+                        </div>
+
+                        <!-- Feedback Item 4 -->
+                        <div class="feedback-card liquid-glass-card reveal">
+                            <div class="feedback-header">
+                                <div class="user-info">
+                                    <img src="https://i.pravatar.cc/150?u=hieupc" alt="Avatar"
                                         class="avatar">
                                     <div class="user-meta">
                                         <h4 class="username">Hieu_PC_Builder</h4>
-                                        <div class="stars">
-                                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
-                                                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
-                                                class="fa-solid fa-star-half-stroke"></i>
-                                        </div>
+                                        <span class="user-role">PC Enthusiast</span>
                                     </div>
+                                </div>
+                                <div class="stars">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                        class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                        class="fa-solid fa-star-half-stroke"></i>
                                 </div>
                             </div>
                             <div class="feedback-body">
@@ -410,25 +381,26 @@
                                 jump straight into the game, very satisfied!"
                             </div>
                             <div class="feedback-footer">
-                                <span class="verify"><i class="fa-solid fa-circle-check"></i> Verified Buyer</span>
+                                <span class="verify"><i class="fa-solid fa-circle-check"></i> Verified Review</span>
                                 <span class="date">28/06/2026</span>
                             </div>
                         </div>
 
-                        <!-- Feedback Item 4 -->
-                        <div class="feedback-card liquid-glass-card">
+                        <!-- Feedback Item 5 -->
+                        <div class="feedback-card liquid-glass-card reveal">
                             <div class="feedback-header">
                                 <div class="user-info">
-                                    <img src="https://ui-avatars.com/api/?name=Zuka&background=random" alt="Avatar"
+                                    <img src="https://i.pravatar.cc/150?u=zuka" alt="Avatar"
                                         class="avatar">
                                     <div class="user-meta">
                                         <h4 class="username">Zuka</h4>
-                                        <div class="stars">
-                                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
-                                                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
-                                                class="fa-solid fa-star"></i>
-                                        </div>
+                                        <span class="user-role">Esports Player</span>
                                     </div>
+                                </div>
+                                <div class="stars">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                        class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                        class="fa-solid fa-star"></i>
                                 </div>
                             </div>
                             <div class="feedback-body">
@@ -436,10 +408,25 @@
                                 noticeably reduced."
                             </div>
                             <div class="feedback-footer">
-                                <span class="verify"><i class="fa-solid fa-circle-check"></i> Verified Buyer</span>
+                                <span class="verify"><i class="fa-solid fa-circle-check"></i> Verified Review</span>
                                 <span class="date">20/06/2026</span>
                             </div>
                         </div>
+                    </div>
+                </div>
+
+                <!-- Pro Choice Badge -->
+                <div class="text-center reveal">
+                    <div class="pro-choice-badge">
+                        <div class="avatar-group">
+                            <img src="./assets/avt1.jpg" alt="Pro 1">
+                            <img src="./assets/avt2.jpg" alt="Pro 2">
+                            <img src="./assets/avt3.jpg" alt="Pro 3">
+                            <img src="./assets/avt4.jpg" alt="Pro 4">
+                            <img src="./assets/avt5.jpg" alt="Pro 5">
+                            <div class="avatar-more">+26</div>
+                        </div>
+                        <span class="pro-choice-text">The <strong>Choice</strong> of Top-Tier Pros & Creators</span>
                     </div>
                 </div>
             </div>
@@ -447,7 +434,7 @@
 
         <!-- SECTION 5: CTA -->
         <section class="cta-section section-padding text-center">
-            <div class="container">
+            <div class="container reveal">
                 <h2 class="cta-title">Ready to <span class="highlight-gradient">Optimize</span> Your System?</h2>
                 <p class="cta-desc">Join thousands of gamers and professionals who have already transformed their
                     systems with STRIKE OS</p>
@@ -459,9 +446,83 @@
         </section>
     </main>
 
-    <footer>
-        <div class="container footer-content text-center">
-            <p>&copy; 2026 STRIKE OS. All rights reserved.</p>
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="#" class="logo">
+                        <img src="./assets/logo/logo_S.png" alt="STRIKE OS Logo" class="logo-img">
+                        <span class="logo-text"><span class="text-strike">TRIKE</span> <span class="text-os">OS</span></span>
+                    </a>
+                    <p class="footer-desc">Professional manual PC optimization trusted by esports professionals. System-specific BIOS tweaks, OS optimization, and hardware tuning with verified benchmarks.</p>
+                    <div class="footer-socials">
+                        <a href="#" class="social-icon"><i class="fa-brands fa-x-twitter" style="color: #ffffff;"></i></a>
+                        <a href="#" class="social-icon"><i class="fa-brands fa-discord"></i></a>
+                        <a href="#" class="social-icon"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-actions">
+                    <a href="#" class="footer-cta liquid-glass-card hover-glow">
+                        <div class="cta-icon">
+                            <i class="fa-brands fa-windows"></i>
+                        </div>
+                        <div class="cta-text-wrapper">
+                            <span class="cta-title">Try STRIKE OS</span>
+                            <span class="cta-sub">Free, forever.</span>
+                        </div>
+                        <i class="fa-solid fa-chevron-right chevron"></i>
+                    </a>
+                    <a href="#hero" class="btn-back-to-top">
+                        <i class="fa-solid fa-chevron-up"></i> BACK TO TOP
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-divider"></div>
+
+            <div class="footer-bottom-grid">
+                <div class="footer-col">
+                    <h4 class="col-title"><span class="slash">//</span> SERVICES</h4>
+                    <ul>
+                        <li><a href="#">All Services</a></li>
+                        <li><a href="#">Plan Builder</a></li>
+                        <li><a href="#">Reviews</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 class="col-title"><span class="slash">//</span> COMMUNITY</h4>
+                    <ul>
+                        <li><a href="#">Discord</a></li>
+                        <li><a href="#">YouTube</a></li>
+                        <li><a href="#">X / Twitter</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 class="col-title"><span class="slash">//</span> LEGAL</h4>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Giveaway Terms</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col partners-col">
+                    <h4 class="col-title"><span class="slash">//</span> PARTNERS</h4>
+                    <div class="partner-icons">
+                        <i class="fa-brands fa-youtube partner-icon"></i>
+                        <i class="fa-brands fa-google partner-icon"></i>
+                        <i class="fa-brands fa-steam partner-icon"></i>
+                        <i class="fa-brands fa-twitch partner-icon"></i>
+                        <i class="fa-brands fa-kickstarter partner-icon"></i>
+                    </div>
+                    <p class="partner-text">
+                        Are you a content creator or professional player looking to partner up? <a href="#" class="text-highlight">Get in touch.</a>
+                    </p>
+                </div>
+            </div>
+            
+            <div class="footer-copyright text-center">
+                <p>&copy; 2026 STRIKE OS. All rights reserved.</p>
+            </div>
         </div>
     </footer>
 
@@ -470,3 +531,4 @@
 </body>
 
 </html>
+
