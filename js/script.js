@@ -81,6 +81,25 @@ if (slider) {
                 slider.scrollLeft -= originalScrollWidth;
             }
         }
+        
+        // Arc effect
+        const sliderCenter = slider.getBoundingClientRect().left + slider.clientWidth / 2;
+        const allItems = Array.from(slider.children);
+        
+        allItems.forEach(item => {
+            const rect = item.getBoundingClientRect();
+            const itemCenter = rect.left + rect.width / 2;
+            const distFromCenter = itemCenter - sliderCenter;
+            const normalizedDist = distFromCenter / (slider.clientWidth / 2); // -1 to 1 near edges
+            
+            const translateZ = Math.abs(normalizedDist) * -150;
+            const rotateY = normalizedDist * -20;
+            const scale = 1 - Math.abs(normalizedDist) * 0.1;
+            
+            item.style.transform = `perspective(1000px) translateZ(${translateZ}px) rotateY(${rotateY}deg) scale(${scale})`;
+            item.style.transformStyle = 'preserve-3d';
+        });
+        
         requestAnimationFrame(autoScroll);
     };
     
@@ -100,6 +119,17 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             });
         }
     });
+});
+
+// Scroll Progress Bar
+window.addEventListener('scroll', () => {
+    const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrolled = (winScroll / height) * 100;
+    const progressBar = document.getElementById('scroll-progress');
+    if (progressBar) {
+        progressBar.style.width = scrolled + "%";
+    }
 });
 
 // 3D Slider logic
@@ -298,7 +328,7 @@ const translations = {
         serv4_li1: "Optimize EXPO / DOCP, Memory Frequency, and FCLK for both AM4 and AM5",
         serv4_li2: "Fine-tune Precision Boost Overdrive (PBO) and per-core Curve Optimizer Undervolting",
         serv4_li3: "Enable High Bandwidth and Low Latency Support",
-        serv4_li4: "Suitable for: AMD Ryzen X3D CPUs (5700X3D / 5800X3D / 7800X3D / 7950X3D / 9850X3D / 9800X3D)",
+        serv4_li4: "Suitable for: AMD Ryzen X3D CPUs (<span style=\"color: #a855f7; font-weight: 600;\">5700X3D / 5800X3D / 7800X3D / 7950X3D / 9850X3D / 9800X3D</span>)",
         serv4_btn: "GET OPTIMIZED",
         fb_title: "Client Feedback",
         fb_desc: "Community Feedback",
@@ -357,7 +387,7 @@ const translations = {
         serv4_li1: "Tối ưu EXPO / DOCP, Memory Frequency. FCLK Dành cho cả AM4 và AM5",
         serv4_li2: "Tinh chỉnh Precision Boost Overdrive (PBO), Curve Optimizer Undervolt của từng core CPU",
         serv4_li3: "Bật High Bandwidth Support, Low Latency Support",
-        serv4_li4: "Phù hợp cho: CPU AMD Ryzen X3D (5700X3D / 5800X3D / 7800X3D / 7950X3D / 9850X3D / 9800X3D)",
+        serv4_li4: "Phù hợp cho: CPU AMD Ryzen X3D (<span style=\"color: #a855f7; font-weight: 600;\">5700X3D / 5800X3D / 7800X3D / 7950X3D / 9850X3D / 9800X3D</span>)",
         serv4_btn: "ĐĂNG KÝ DỊCH VỤ",
         fb_title: "Đánh Giá Khách Hàng",
         fb_desc: "Phản hồi từ cộng đồng",

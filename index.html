@@ -14,17 +14,24 @@
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <!-- CSS -->
-    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/main.css?v=2">
     <link rel="stylesheet" href="./css/base.css">
-    
+
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="./assets/logo/logo_S.png">
 
 </head>
 
 <body>
+    <!-- Neon Scroll Progress Bar -->
+    <div class="scroll-progress-container">
+        <div class="scroll-progress-bar" id="scroll-progress"></div>
+    </div>
+
     <!-- PARALLAX BACKGROUND -->
-    <div class="global-parallax-bg"></div>
+    <div class="global-parallax-bg">
+        <div id="particles-js"></div>
+    </div>
 
     <!-- HEADER -->
     <header>
@@ -40,7 +47,8 @@
                 <a href="#feedback" data-i18n="nav_feedback">Feedback</a>
             </nav>
             <div class="header-actions" style="display: flex; align-items: center; gap: 20px;">
-                <a href="https://discord.gg/your_invite_link" class="btn btn-primary header-btn" target="_blank" data-i18n="btn_discord">Join Discord</a>
+                <a href="https://discord.gg/your_invite_link" class="btn btn-primary header-btn" target="_blank"
+                    data-i18n="btn_discord">Join Discord</a>
                 <div class="lang-switch">
                     <button class="lang-btn active" data-lang="en">ENG</button>
                     <span class="lang-divider">|</span>
@@ -57,7 +65,8 @@
                 <div class="hero-left">
                     <h1 class="reveal reveal-left">
                         <span data-i18n="hero_h1_line1">STRIKE OS.<br></span>
-                        <span data-i18n="hero_h1_line2"><span class="highlight">TUNED FOR MAXIMUM PERFORMANCE.</span><br></span>
+                        <span data-i18n="hero_h1_line2"><span class="highlight">TUNED FOR MAXIMUM
+                                PERFORMANCE.</span><br></span>
                         <span data-i18n="hero_h1_line3">BUILT FOR EVERYONE.</span>
                     </h1>
                     <p class="desc reveal reveal-left delay-1" data-i18n="hero_desc">
@@ -68,23 +77,24 @@
                     <!-- Game Logos Marquee -->
                     <div class="hero-logos-marquee reveal reveal-left delay-2">
                         <div class="marquee-track">
-                            <img src="./assets/logo/logo_game/lgoo_pubg.jpg" alt="PUBG">
-                            <img src="./assets/logo/logo_game/logo_csgo.png" alt="CS:GO">
-                            <img src="./assets/logo/logo_game/logo_fortnite.png" alt="Fortnite">
-                            <img src="./assets/logo/logo_game/logo_lol.png" alt="LoL">
-                            <img src="./assets/logo/logo_game/logo_rainbowsix.png" alt="Rainbow Six">
-                            <img src="./assets/logo/logo_game/logo_valorant.png" alt="Valorant">
+                            <div class="game-badge"><img src="./assets/logo/logo_game/lgoo_pubg.jpg" alt="PUBG"></div>
+                            <div class="game-badge"><img src="./assets/logo/logo_game/logo_csgo.png" alt="CS:GO"></div>
+                            <div class="game-badge"><img src="./assets/logo/logo_game/logo_fortnite.png" alt="Fortnite"></div>
+                            <div class="game-badge"><img src="./assets/logo/logo_game/logo_lol.png" alt="LoL"></div>
+                            <div class="game-badge"><img src="./assets/logo/logo_game/logo_rainbowsix.png" alt="Rainbow Six"></div>
+                            <div class="game-badge"><img src="./assets/logo/logo_game/logo_valorant.png" alt="Valorant"></div>
                             <!-- Duplicate for infinite loop -->
-                            <img src="./assets/logo/logo_game/lgoo_pubg.jpg" alt="PUBG">
-                            <img src="./assets/logo/logo_game/logo_csgo.png" alt="CS:GO">
-                            <img src="./assets/logo/logo_game/logo_fortnite.png" alt="Fortnite">
-                            <img src="./assets/logo/logo_game/logo_lol.png" alt="LoL">
-                            <img src="./assets/logo/logo_game/logo_rainbowsix.png" alt="Rainbow Six">
-                            <img src="./assets/logo/logo_game/logo_valorant.png" alt="Valorant">
+                            <div class="game-badge"><img src="./assets/logo/logo_game/lgoo_pubg.jpg" alt="PUBG"></div>
+                            <div class="game-badge"><img src="./assets/logo/logo_game/logo_csgo.png" alt="CS:GO"></div>
+                            <div class="game-badge"><img src="./assets/logo/logo_game/logo_fortnite.png" alt="Fortnite"></div>
+                            <div class="game-badge"><img src="./assets/logo/logo_game/logo_lol.png" alt="LoL"></div>
+                            <div class="game-badge"><img src="./assets/logo/logo_game/logo_rainbowsix.png" alt="Rainbow Six"></div>
+                            <div class="game-badge"><img src="./assets/logo/logo_game/logo_valorant.png" alt="Valorant"></div>
                         </div>
                     </div>
 
-                    <div class="hero-buttons reveal reveal-left delay-3" style="display: flex; gap: 20px; align-items: center;">
+                    <div class="hero-buttons reveal reveal-left delay-3"
+                        style="display: flex; gap: 20px; align-items: center;">
                         <a href="https://discord.gg/your_invite_link" class="btn btn-primary btn-large cta-btn"
                             target="_blank">
                             <span data-i18n="hero_btn_discord"><i class="fa-brands fa-discord"></i> Join Discord</span>
@@ -117,8 +127,18 @@
             <div class="bg-blur-circle bg-blur-2"></div>
         </section>
 
+        <!-- SECTION DIVIDER MARQUEE -->
+        <div class="section-divider-marquee">
+            <div class="divider-marquee-track">
+                <span>STRIKE OS // MAXIMUM PERFORMANCE // LOW LATENCY // </span>
+                <span>STRIKE OS // MAXIMUM PERFORMANCE // LOW LATENCY // </span>
+                <span>STRIKE OS // MAXIMUM PERFORMANCE // LOW LATENCY // </span>
+                <span>STRIKE OS // MAXIMUM PERFORMANCE // LOW LATENCY // </span>
+            </div>
+        </div>
+
         <!-- SECTION 2: PERFORMANCE -->
-        <section id="performance" class="performance-section section-padding" style="padding-bottom: 10px;">
+        <section id="performance" class="performance-section section-padding diagonal-section" style="padding-bottom: 10px;">
             <div class="container">
                 <div class="section-title text-center reveal">
                     <h2 data-i18n="perf_title">Performance Benchmark</h2>
@@ -129,17 +149,24 @@
                 <div class="benchmark-3d-wrapper" style="margin-top: 50px;">
                     <!-- Bottom Right Controls -->
                     <div class="slider-bottom-right">
-                        <a href="#services" class="see-services-link"><span data-i18n="see_services">SEE SERVICES</span> <i class="fa-solid fa-chevron-right" style="font-size: 10px;"></i></a>
+                        <a href="#services" class="see-services-link"><span data-i18n="see_services">SEE SERVICES</span>
+                            <i class="fa-solid fa-chevron-right" style="font-size: 10px;"></i></a>
                         <div class="slider-logos">
-                            <img src="./assets/logo/logo_game/lgoo_pubg.jpg" alt="PUBG" class="slider-logo active" data-index="0">
-                            <img src="./assets/logo/logo_game/logo_left4dead.jpg" alt="Left4Dead" class="slider-logo" data-index="1">
-                            <img src="./assets/logo/logo_game/logo_csgo.png" alt="CS2" class="slider-logo" data-index="2">
-                            <img src="./assets/logo/logo_game/logo_gta5.png" alt="GTA 5" class="slider-logo" data-index="3">
-                            <img src="./assets/logo/logo_game/logo_gta.png" alt="GTA 5 2" class="slider-logo" data-index="4">
-                            <img src="./assets/logo/logo_game/logo_valorant.png" alt="Valorant" class="slider-logo" data-index="5">
+                            <img src="./assets/logo/logo_game/lgoo_pubg.jpg" alt="PUBG" class="slider-logo active"
+                                data-index="0">
+                            <img src="./assets/logo/logo_game/logo_left4dead.jpg" alt="Left4Dead" class="slider-logo"
+                                data-index="1">
+                            <img src="./assets/logo/logo_game/logo_csgo.png" alt="CS2" class="slider-logo"
+                                data-index="2">
+                            <img src="./assets/logo/logo_game/logo_gta5.png" alt="GTA 5" class="slider-logo"
+                                data-index="3">
+                            <img src="./assets/logo/logo_game/logo_gta.png" alt="GTA 5 2" class="slider-logo"
+                                data-index="4">
+                            <img src="./assets/logo/logo_game/logo_valorant.png" alt="Valorant" class="slider-logo"
+                                data-index="5">
                         </div>
                     </div>
-                    
+
                     <div class="benchmark-3d-slider">
                         <!-- PUBG -->
                         <div class="slider-item active" data-index="0">
@@ -209,16 +236,46 @@
                 </div>
 
                 <div class="services-grid">
-                    <!-- Service 1 -->
-                    <div class="service-card flagship-card reveal reveal-scale">
+                    <!-- Service 3 (Swapped to 1st pos) -->
+                    <div class="service-card reveal reveal-scale bento-featured">
+                        <div class="card-inner-bg"></div>
+                        <div class="service-img">
+                            <img src="./assets/Build PC.png" alt="PC Building">
+                        </div>
+                        <div class="service-content">
+                            <h4 class="service-subtitle" data-i18n="serv3_sub">HARDWARE</h4>
+                            <h3 class="service-title"><i class="fa-solid fa-desktop"></i> <span data-i18n="serv3_title">PC Building</span></h3>
+                            <p class="service-desc" data-i18n="serv3_desc">Consulting and building PC configurations
+                                tailored to your needs.</p>
+
+                            <ul class="service-features">
+                                <li data-i18n="serv3_li1">Tailored configuration consulting based on needs and budget
+                                    (Gaming / Streaming / Design / Work)</li>
+                                <li data-i18n="serv3_li2">Select genuine components with optimal compatibility between
+                                    CPU, RAM, GPU, and motherboard</li>
+                                <li data-i18n="serv3_li3">Professional system assembly with clean and aesthetic cable
+                                    management</li>
+                            </ul>
+
+                            <div class="btn-wrapper" style="position: relative; margin-top: 30px;">
+                                <span class="btn-tag">START NOW</span>
+                                <a href="#" class="btn btn-purple w-100" data-i18n="serv3_btn">GET CONSULTATION</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service 1 (Swapped to 2nd pos) -->
+                    <div class="service-card flagship-card reveal reveal-scale delay-1">
+                        <div class="card-inner-bg"></div>
                         <div class="service-img">
                             <img src="./assets/Window Custom.png" alt="Strike OS Window Custom">
                         </div>
                         <div class="service-content">
                             <h4 class="service-subtitle text-blue" data-i18n="serv1_sub">OS OPTIMIZATION</h4>
-                            <h3 class="service-title" data-i18n="serv1_title">Strike OS - Window Custom</h3>
-                            <p class="service-desc" data-i18n="serv1_desc">STRIKE OS is a custom Windows project developed to optimize performance, stability, and user experience.</p>
-                            
+                            <h3 class="service-title"><i class="fa-brands fa-windows"></i> <span data-i18n="serv1_title">Strike OS - Window Custom</span></h3>
+                            <p class="service-desc" data-i18n="serv1_desc">STRIKE OS is a custom Windows project
+                                developed to optimize performance, stability, and user experience.</p>
+
                             <ul class="service-features features-blue">
                                 <li data-i18n="serv1_li1">Reduce background processes and unnecessary services</li>
                                 <li data-i18n="serv1_li2">Optimize Registry & Services</li>
@@ -226,78 +283,72 @@
                                 <li data-i18n="serv1_li4">Reduce Input Latency</li>
                                 <li data-i18n="serv1_li5">Optimize CPU, RAM, and GPU</li>
                             </ul>
-                            
-                            <a href="#" class="btn btn-primary w-100 btn-blue" data-i18n="serv1_btn">GET OPTIMIZED</a>
-                        </div>
-                    </div>
 
-                    <!-- Service 3 (Swapped to 2nd pos) -->
-                    <div class="service-card reveal reveal-scale delay-1">
-                        <div class="service-img">
-                            <img src="./assets/Build PC.png" alt="PC Building">
-                        </div>
-                        <div class="service-content">
-                            <h4 class="service-subtitle" data-i18n="serv3_sub">HARDWARE</h4>
-                            <h3 class="service-title" data-i18n="serv3_title">PC Building</h3>
-                            <p class="service-desc" data-i18n="serv3_desc">Consulting and building PC configurations tailored to your needs.</p>
-                            
-                            <ul class="service-features">
-                                <li data-i18n="serv3_li1">Tailored configuration consulting based on needs and budget (Gaming / Streaming / Design / Work)</li>
-                                <li data-i18n="serv3_li2">Select genuine components with optimal compatibility between CPU, RAM, GPU, and motherboard</li>
-                                <li data-i18n="serv3_li3">Professional system assembly with clean and aesthetic cable management</li>
-                            </ul>
-                            
-                            <a href="#" class="btn btn-purple w-100" style="margin-top: 30px;" data-i18n="serv3_btn">GET CONSULTATION</a>
+                            <a href="#" class="btn btn-primary w-100 btn-blue" data-i18n="serv1_btn">GET OPTIMIZED</a>
                         </div>
                     </div>
 
                     <!-- Service 2 (Swapped to 3rd pos) -->
                     <div class="service-card flagship-card reveal reveal-scale delay-2">
+                        <div class="card-inner-bg"></div>
                         <div class="service-img">
                             <img src="./assets/Window Optimization.png" alt="Window Optimization">
                         </div>
                         <div class="service-content">
                             <h4 class="service-subtitle text-blue" data-i18n="serv2_sub">SYSTEM TUNING</h4>
-                            <h3 class="service-title" data-i18n="serv2_title">Window Optimization</h3>
-                            <p class="service-desc" data-i18n="serv2_desc">Optimize your Windows system for maximum performance</p>
-                            
+                            <h3 class="service-title"><i class="fa-solid fa-gauge-high"></i> <span data-i18n="serv2_title">Window Optimization</span></h3>
+                            <p class="service-desc" data-i18n="serv2_desc">Optimize your Windows system for maximum
+                                performance</p>
+
                             <ul class="service-features features-blue">
                                 <li data-i18n="serv2_li1">Select appropriate Drivers and Chipsets for your hardware</li>
-                                <li data-i18n="serv2_li2">Network Optimization (optimize network & connection stability)</li>
+                                <li data-i18n="serv2_li2">Network Optimization (optimize network & connection stability)
+                                </li>
                                 <li data-i18n="serv2_li3">Input Latency Reduction</li>
                                 <li data-i18n="serv2_li4">Registry Optimization</li>
                                 <li data-i18n="serv2_li5">Windows Gaming Optimization Service Fine-tuning</li>
                                 <li data-i18n="serv2_li6">RAM Usage Optimization</li>
                                 <li data-i18n="serv2_li7">Disable unnecessary background processes</li>
                             </ul>
-                            
+
                             <a href="#" class="btn btn-primary w-100 btn-blue" data-i18n="serv2_btn">GET OPTIMIZED</a>
                         </div>
                     </div>
 
                     <!-- Service 4 -->
                     <div class="service-card flagship-card reveal reveal-scale delay-3">
+                        <div class="card-inner-bg"></div>
                         <div class="service-img">
                             <img src="./assets/Tuning Bios.png" alt="Tuning Bios">
                         </div>
                         <div class="service-content">
                             <h4 class="service-subtitle text-blue" data-i18n="serv4_sub">BIOS TUNING</h4>
-                            <h3 class="service-title" data-i18n="serv4_title">Tuning Bios</h3>
+                            <h3 class="service-title"><i class="fa-solid fa-gear"></i> <span data-i18n="serv4_title">Tuning Bios</span></h3>
                             <p class="service-desc" data-i18n="serv4_desc">BIOS Optimization</p>
-                            
+
                             <ul class="service-features features-blue">
-                                <li data-i18n="serv4_li1">Optimize EXPO / DOCP, Memory Frequency, and FCLK for both AM4 and AM5</li>
-                                <li data-i18n="serv4_li2">Fine-tune Precision Boost Overdrive (PBO) and per-core Curve Optimizer Undervolting</li>
+                                <li data-i18n="serv4_li1">Optimize EXPO / DOCP, Memory Frequency, and FCLK for both AM4
+                                    and AM5</li>
+                                <li data-i18n="serv4_li2">Fine-tune Precision Boost Overdrive (PBO) and per-core Curve
+                                    Optimizer Undervolting</li>
                                 <li data-i18n="serv4_li3">Enable High Bandwidth and Low Latency Support</li>
-                                <li data-i18n="serv4_li4">Suitable for: AMD Ryzen X3D CPUs (5700X3D / 5800X3D / 7800X3D / 7950X3D / 9850X3D / 9800X3D)</li>
+                                <li data-i18n="serv4_li4">Suitable for: AMD Ryzen X3D CPUs (5700X3D / 5800X3D / 7800X3D
+                                    / 7950X3D / 9850X3D / 9800X3D)</li>
                             </ul>
-                            
+
                             <a href="#" class="btn btn-primary w-100 btn-blue" data-i18n="serv4_btn">GET OPTIMIZED</a>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+        <!-- SECTION DIVIDER -->
+        <div class="neon-divider">
+            <div class="line"></div>
+            <div class="icon"><i class="fa-solid fa-bolt"></i></div>
+            <div class="line"></div>
+        </div>
+
         <!-- SECTION 4: FEEDBACK -->
         <section id="feedback" class="feedback-section section-padding">
             <div class="container">
@@ -319,7 +370,9 @@
                                     </div>
                                 </div>
                                 <div class="stars">
-                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                        class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                        class="fa-solid fa-star"></i>
                                 </div>
                             </div>
                             <div class="feedback-body">
@@ -342,7 +395,9 @@
                                     </div>
                                 </div>
                                 <div class="stars">
-                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                        class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                        class="fa-solid fa-star"></i>
                                 </div>
                             </div>
                             <div class="feedback-body">
@@ -358,8 +413,7 @@
                         <div class="feedback-card liquid-glass-card reveal">
                             <div class="feedback-header">
                                 <div class="user-info">
-                                    <img src="https://i.pravatar.cc/150?u=kira" alt="Avatar"
-                                        class="avatar">
+                                    <img src="https://i.pravatar.cc/150?u=kira" alt="Avatar" class="avatar">
                                     <div class="user-meta">
                                         <h4 class="username">VIP 14600KF 3090</h4>
                                         <span class="user-role">Verified Customer</span>
@@ -384,8 +438,7 @@
                         <div class="feedback-card liquid-glass-card reveal">
                             <div class="feedback-header">
                                 <div class="user-info">
-                                    <img src="https://i.pravatar.cc/150?u=khan" alt="Avatar"
-                                        class="avatar">
+                                    <img src="https://i.pravatar.cc/150?u=khan" alt="Avatar" class="avatar">
                                     <div class="user-meta">
                                         <h4 class="username">Khạn</h4>
                                         <span class="user-role">Verified Customer</span>
@@ -410,8 +463,7 @@
                         <div class="feedback-card liquid-glass-card reveal">
                             <div class="feedback-header">
                                 <div class="user-info">
-                                    <img src="https://i.pravatar.cc/150?u=siu" alt="Avatar"
-                                        class="avatar">
+                                    <img src="https://i.pravatar.cc/150?u=siu" alt="Avatar" class="avatar">
                                     <div class="user-meta">
                                         <h4 class="username">siu de thun</h4>
                                         <span class="user-role">Verified Customer</span>
@@ -433,32 +485,21 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- Pro Choice Badge -->
-                <div class="text-center reveal">
-                    <div class="pro-choice-badge">
-                        <div class="avatar-group">
-                            <img src="./assets/avt1.jpg" alt="Pro 1">
-                            <img src="./assets/avt2.jpg" alt="Pro 2">
-                            <img src="./assets/avt3.jpg" alt="Pro 3">
-                            <img src="./assets/avt4.jpg" alt="Pro 4">
-                            <img src="./assets/avt5.jpg" alt="Pro 5">
-                            <div class="avatar-more">+26</div>
-                        </div>
-                        <span class="pro-choice-text" data-i18n="pro_choice">The <strong>Choice</strong> of Top-Tier Pros & Creators</span>
-                    </div>
-                </div>
             </div>
         </section>
 
         <!-- SECTION 5: CTA -->
         <section class="cta-section section-padding text-center">
             <div class="container reveal">
-                <h2 class="cta-title" data-i18n="cta_title">Ready to <span class="highlight-gradient">Optimize</span> Your System?</h2>
-                <p class="cta-desc" data-i18n="cta_desc">Join thousands of gamers and professionals who have already transformed their
+                <h2 class="cta-title" data-i18n="cta_title">Ready to <span class="highlight-gradient">Optimize</span>
+                    Your System?</h2>
+                <p class="cta-desc" data-i18n="cta_desc">Join thousands of gamers and professionals who have already
+                    transformed their
                     systems with STRIKE OS</p>
-                <a href="https://discord.gg/your_invite_link" class="btn btn-primary btn-large" target="_blank" data-i18n="cta_btn">
-                    Join Our Discord Community <i class="fa-solid fa-chevron-right" style="margin-left: 5px; font-size: 0.9rem;"></i>
+                <a href="https://discord.gg/your_invite_link" class="btn btn-primary btn-large" target="_blank"
+                    data-i18n="cta_btn">
+                    Join Our Discord Community <i class="fa-solid fa-chevron-right"
+                        style="margin-left: 5px; font-size: 0.9rem;"></i>
                 </a>
             </div>
         </section>
@@ -470,11 +511,14 @@
                 <div class="footer-brand">
                     <a href="#" class="logo">
                         <img src="./assets/logo/logo_S.png" alt="STRIKE OS Logo" class="logo-img">
-                        <span class="logo-text"><span class="text-strike">TRIKE</span> <span class="text-os">OS</span></span>
+                        <span class="logo-text"><span class="text-strike">TRIKE</span> <span
+                                class="text-os">OS</span></span>
                     </a>
-                    <p class="footer-desc">Professional manual PC optimization trusted by esports professionals. System-specific BIOS tweaks, OS optimization, and hardware tuning with verified benchmarks.</p>
+                    <p class="footer-desc">Professional manual PC optimization trusted by esports professionals.
+                        System-specific BIOS tweaks, OS optimization, and hardware tuning with verified benchmarks.</p>
                     <div class="footer-socials">
-                        <a href="#" class="social-icon"><i class="fa-brands fa-x-twitter" style="color: #ffffff;"></i></a>
+                        <a href="#" class="social-icon"><i class="fa-brands fa-x-twitter"
+                                style="color: #ffffff;"></i></a>
                         <a href="#" class="social-icon"><i class="fa-brands fa-discord"></i></a>
                         <a href="#" class="social-icon"><i class="fa-brands fa-youtube"></i></a>
                     </div>
@@ -497,16 +541,16 @@
             </div>
 
             <div class="footer-divider"></div>
-            
+
             <div class="footer-copyright text-center">
                 <p>&copy; 2026 STRIKE OS. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
     <script src="./js/script.js"></script>
 
 </body>
 
 </html>
-
