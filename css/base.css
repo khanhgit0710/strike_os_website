@@ -18,3 +18,32 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+/* CUSTOM SCROLLBAR */
+html::-webkit-scrollbar {
+    width: 10px;
+    background: var(--bg-dark);
+}
+
+html::-webkit-scrollbar-track {
+    background: rgba(20, 20, 30, 0.6);
+    border-radius: 5px;
+}
+
+html::-webkit-scrollbar-thumb {
+    background: var(--neon-purple);
+    border-radius: 5px;
+    border: 2px solid var(--bg-dark); /* Adds padding around thumb */
+}
+
+html::-webkit-scrollbar-thumb:hover {
+    background: var(--neon-purple-light);
+    box-shadow: 0 0 10px var(--neon-purple-glow);
+}
+
+/* TEXT SELECTION */
+::selection {
+    background: var(--neon-purple-light);
+    color: #fff;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}

@@ -122,15 +122,22 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // Scroll Progress Bar
+let progressTicking = false;
 window.addEventListener('scroll', () => {
-    const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    const scrolled = (winScroll / height) * 100;
-    const progressBar = document.getElementById('scroll-progress');
-    if (progressBar) {
-        progressBar.style.width = scrolled + "%";
+    if (!progressTicking) {
+        window.requestAnimationFrame(() => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            const progressBar = document.getElementById('scroll-progress');
+            if (progressBar) {
+                progressBar.style.width = scrolled + "%";
+            }
+            progressTicking = false;
+        });
+        progressTicking = true;
     }
-});
+}, { passive: true });
 
 // 3D Slider logic
 const slider3dItems = document.querySelectorAll('.slider-item');
@@ -419,9 +426,30 @@ function setLanguage(lang) {
     translatableElements.forEach(el => {
         const key = el.dataset.i18n;
         if (translations[lang] && translations[lang][key]) {
-            el.innerHTML = translations[lang][key];
+            if (key === 'hero_desc') {
+                typeWriter(el, translations[lang][key]);
+            } else {
+                el.innerHTML = translations[lang][key];
+            }
         }
     });
+}
+
+// --- Typewriter Effect ---
+let typeWriterTimeout;
+function typeWriter(element, text) {
+    clearTimeout(typeWriterTimeout);
+    element.innerHTML = '<span class="typewriter-text"></span><span class="typewriter-cursor"></span>';
+    const textSpan = element.querySelector('.typewriter-text');
+    let i = 0;
+    function type() {
+        if (i < text.length) {
+            textSpan.innerHTML += text.charAt(i);
+            i++;
+            typeWriterTimeout = setTimeout(type, 15); // Typing speed
+        }
+    }
+    type();
 }
 
 // Event Listeners for buttons
@@ -441,24 +469,31 @@ document.addEventListener('DOMContentLoaded', () => {
 const sections = document.querySelectorAll('section');
 const navLinks = document.querySelectorAll('nav a');
 
+let navTicking = false;
 window.addEventListener('scroll', () => {
-    let current = '';
+    if (!navTicking) {
+        window.requestAnimationFrame(() => {
+            let current = '';
 
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-        if (pageYOffset >= (sectionTop - 200)) {
-            current = section.getAttribute('id');
-        }
-    });
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
 
-    navLinks.forEach(a => {
-        a.classList.remove('active');
-        if (current && a.getAttribute('href') === `#${current}`) {
-            a.classList.add('active');
-        }
-    });
-});
+            navLinks.forEach(a => {
+                a.classList.remove('active');
+                if (current && a.getAttribute('href') === `#${current}`) {
+                    a.classList.add('active');
+                }
+            });
+            navTicking = false;
+        });
+        navTicking = true;
+    }
+}, { passive: true });
 
 // Hamburger Menu Logic
 const hamburgerBtn = document.querySelector('.hamburger-btn');
@@ -487,3 +522,31 @@ if (hamburgerBtn && mobileNav) {
         });
     });
 }
+
+// --- Custom Tooltip Logic ---
+document.addEventListener('DOMContentLoaded', () => {
+    const tooltip = document.createElement('div');
+    tooltip.className = 'custom-tooltip';
+    document.body.appendChild(tooltip);
+
+    const tooltipElements = document.querySelectorAll('.game-badge img, .slider-logo');
+    
+    tooltipElements.forEach(el => {
+        el.addEventListener('mouseenter', (e) => {
+            const text = el.getAttribute('alt');
+            if (text) {
+                tooltip.textContent = text;
+                tooltip.classList.add('visible');
+            }
+        });
+        
+        el.addEventListener('mousemove', (e) => {
+            tooltip.style.left = (e.pageX + 15) + 'px';
+            tooltip.style.top = (e.pageY + 15) + 'px';
+        });
+        
+        el.addEventListener('mouseleave', () => {
+            tooltip.classList.remove('visible');
+        });
+    });
+});
