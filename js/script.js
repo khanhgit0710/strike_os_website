@@ -3,13 +3,13 @@ const benchmarkObserverCallback = (entries, observer) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             const card = entry.target;
-            
+
             // Animate progress bar width
             const progress = card.querySelector('.progress-fill');
             if (progress && progress.dataset.width) {
                 progress.style.width = progress.dataset.width;
             }
-            
+
             // Animate number count up
             const numberEl = card.querySelector('.new-fps');
             if (numberEl && numberEl.dataset.target) {
@@ -25,7 +25,7 @@ const benchmarkObserverCallback = (entries, observer) => {
                     numberEl.textContent = current;
                 }, 30);
             }
-            
+
             observer.unobserve(card); // Only animate once
         }
     });
@@ -44,8 +44,8 @@ let isHovered = false;
 if (slider) {
     const items = Array.from(slider.children);
     // The gap defined in CSS is 30px
-    const gap = 30; 
-    
+    const gap = 30;
+
     // Total width to scroll before we loop back
     // It is the original scrollWidth plus the gap that will connect to the first clone
     const originalScrollWidth = slider.scrollWidth + gap;
@@ -58,13 +58,13 @@ if (slider) {
 
     slider.addEventListener('mouseenter', () => isHovered = true);
     slider.addEventListener('mouseleave', () => isHovered = false);
-    
+
     // Pause auto-scroll on touch/swipe
-    slider.addEventListener('touchstart', () => isHovered = true, {passive: true});
+    slider.addEventListener('touchstart', () => isHovered = true, { passive: true });
     slider.addEventListener('touchend', () => {
         setTimeout(() => isHovered = false, 1000); // Resume shortly after touch ends
-    }, {passive: true});
-    
+    }, { passive: true });
+
     let scrollSpeed = 0.8;
     let scrollAccumulator = 0;
 
@@ -75,34 +75,34 @@ if (slider) {
                 slider.scrollLeft += Math.floor(scrollAccumulator);
                 scrollAccumulator -= Math.floor(scrollAccumulator);
             }
-            
+
             // Seamless infinite loop
             if (slider.scrollLeft >= originalScrollWidth) {
                 slider.scrollLeft -= originalScrollWidth;
             }
         }
-        
+
         // Arc effect
         const sliderCenter = slider.getBoundingClientRect().left + slider.clientWidth / 2;
         const allItems = Array.from(slider.children);
-        
+
         allItems.forEach(item => {
             const rect = item.getBoundingClientRect();
             const itemCenter = rect.left + rect.width / 2;
             const distFromCenter = itemCenter - sliderCenter;
             const normalizedDist = distFromCenter / (slider.clientWidth / 2); // -1 to 1 near edges
-            
+
             const translateZ = Math.abs(normalizedDist) * -150;
             const rotateY = normalizedDist * -20;
             const scale = 1 - Math.abs(normalizedDist) * 0.1;
-            
+
             item.style.transform = `perspective(1000px) translateZ(${translateZ}px) rotateY(${rotateY}deg) scale(${scale})`;
             item.style.transformStyle = 'preserve-3d';
         });
-        
+
         requestAnimationFrame(autoScroll);
     };
-    
+
     requestAnimationFrame(autoScroll);
 }
 
@@ -139,8 +139,8 @@ let current3dIndex = 0;
 const total3dItems = slider3dItems.length;
 
 function update3dSlider(newIndex) {
-    if(total3dItems === 0) return;
-    
+    if (total3dItems === 0) return;
+
     // Remove all classes
     slider3dItems.forEach(item => {
         item.classList.remove('active', 'prev', 'next', 'hidden');
@@ -150,7 +150,7 @@ function update3dSlider(newIndex) {
     });
 
     current3dIndex = newIndex;
-    
+
     // Add new classes
     const prevIndex = (current3dIndex - 1 + total3dItems) % total3dItems;
     const nextIndex = (current3dIndex + 1) % total3dItems;
@@ -170,7 +170,7 @@ function update3dSlider(newIndex) {
     slider3dLogos[current3dIndex].classList.add('active');
 }
 
-if(total3dItems > 0) {
+if (total3dItems > 0) {
     // Auto play
     let slider3dInterval = setInterval(() => {
         update3dSlider((current3dIndex + 1) % total3dItems);
@@ -405,10 +405,10 @@ function setLanguage(lang) {
 
     const langBtns = document.querySelectorAll('.lang-btn');
     const translatableElements = document.querySelectorAll('[data-i18n]');
-    
+
     // Update active button
     langBtns.forEach(btn => {
-        if(btn.dataset.lang === lang) {
+        if (btn.dataset.lang === lang) {
             btn.classList.add('active');
         } else {
             btn.classList.remove('active');
@@ -418,7 +418,7 @@ function setLanguage(lang) {
     // Translate elements
     translatableElements.forEach(el => {
         const key = el.dataset.i18n;
-        if(translations[lang] && translations[lang][key]) {
+        if (translations[lang] && translations[lang][key]) {
             el.innerHTML = translations[lang][key];
         }
     });
@@ -432,7 +432,58 @@ document.addEventListener('DOMContentLoaded', () => {
             setLanguage(btn.dataset.lang);
         });
     });
-    
+
     const savedLang = localStorage.getItem('strike_os_lang') || 'en';
     setLanguage(savedLang);
 });
+
+// Navigation Active State on Scroll
+const sections = document.querySelectorAll('section');
+const navLinks = document.querySelectorAll('nav a');
+
+window.addEventListener('scroll', () => {
+    let current = '';
+
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        if (pageYOffset >= (sectionTop - 200)) {
+            current = section.getAttribute('id');
+        }
+    });
+
+    navLinks.forEach(a => {
+        a.classList.remove('active');
+        if (current && a.getAttribute('href') === `#${current}`) {
+            a.classList.add('active');
+        }
+    });
+});
+
+// Hamburger Menu Logic
+const hamburgerBtn = document.querySelector('.hamburger-btn');
+const mobileNav = document.querySelector('header nav');
+
+if (hamburgerBtn && mobileNav) {
+    hamburgerBtn.addEventListener('click', () => {
+        mobileNav.classList.toggle('mobile-open');
+        const icon = hamburgerBtn.querySelector('i');
+        if (mobileNav.classList.contains('mobile-open')) {
+            icon.classList.remove('fa-bars');
+            icon.classList.add('fa-times');
+        } else {
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars');
+        }
+    });
+
+    // Close mobile nav when clicking a link
+    mobileNav.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            mobileNav.classList.remove('mobile-open');
+            const icon = hamburgerBtn.querySelector('i');
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars');
+        });
+    });
+}

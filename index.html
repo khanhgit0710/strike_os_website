@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -16,6 +16,7 @@
     <!-- CSS -->
     <link rel="stylesheet" href="./css/main.css?v=2">
     <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/responsive.css">
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="./assets/logo/logo_S.png">
@@ -36,7 +37,12 @@
     <!-- HEADER -->
     <header>
         <div class="container header-container">
-            <a href="#" class="logo">
+            <!-- Mobile Hamburger Menu -->
+            <button class="hamburger-btn" aria-label="Toggle menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            
+            <a href="#hero" class="logo">
                 <img src="./assets/logo/logo_S.png" alt="STRIKE OS Logo" class="logo-img">
                 <span class="logo-text"><span class="text-strike">TRIKE</span> <span class="text-os">OS</span></span>
             </a>
@@ -47,8 +53,9 @@
                 <a href="#feedback" data-i18n="nav_feedback">Feedback</a>
             </nav>
             <div class="header-actions" style="display: flex; align-items: center; gap: 20px;">
-                <a href="https://discord.gg/your_invite_link" class="btn btn-primary header-btn" target="_blank"
-                    data-i18n="btn_discord">Join Discord</a>
+                <a href="https://discord.gg/tD2xDg7kx8" class="btn btn-primary header-btn discord-btn" target="_blank">
+                    <i class="fa-brands fa-discord"></i> <span data-i18n="btn_discord">Join Discord</span>
+                </a>
                 <div class="lang-switch">
                     <button class="lang-btn active" data-lang="en">ENG</button>
                     <span class="lang-divider">|</span>
@@ -95,7 +102,7 @@
 
                     <div class="hero-buttons reveal reveal-left delay-3"
                         style="display: flex; gap: 20px; align-items: center;">
-                        <a href="https://discord.gg/your_invite_link" class="btn btn-primary btn-large cta-btn"
+                        <a href="https://discord.gg/tD2xDg7kx8" class="btn btn-primary btn-large cta-btn"
                             target="_blank">
                             <span data-i18n="hero_btn_discord"><i class="fa-brands fa-discord"></i> Join Discord</span>
                         </a>
@@ -146,7 +153,7 @@
                 </div>
 
                 <!-- 3D Slider Container -->
-                <div class="benchmark-3d-wrapper" style="margin-top: 50px;">
+                <div class="benchmark-3d-wrapper reveal delay-1" style="margin-top: 50px;">
                     <!-- Bottom Right Controls -->
                     <div class="slider-bottom-right">
                         <a href="#services" class="see-services-link"><span data-i18n="see_services">SEE SERVICES</span>
@@ -496,7 +503,7 @@
                 <p class="cta-desc" data-i18n="cta_desc">Join thousands of gamers and professionals who have already
                     transformed their
                     systems with STRIKE OS</p>
-                <a href="https://discord.gg/your_invite_link" class="btn btn-primary btn-large" target="_blank"
+                <a href="https://discord.gg/tD2xDg7kx8" class="btn btn-primary btn-large" target="_blank"
                     data-i18n="cta_btn">
                     Join Our Discord Community <i class="fa-solid fa-chevron-right"
                         style="margin-left: 5px; font-size: 0.9rem;"></i>
@@ -509,7 +516,7 @@
         <div class="container">
             <div class="footer-top">
                 <div class="footer-brand">
-                    <a href="#" class="logo">
+                    <a href="#hero" class="logo">
                         <img src="./assets/logo/logo_S.png" alt="STRIKE OS Logo" class="logo-img">
                         <span class="logo-text"><span class="text-strike">TRIKE</span> <span
                                 class="text-os">OS</span></span>
@@ -519,7 +526,7 @@
                     <div class="footer-socials">
                         <a href="#" class="social-icon"><i class="fa-brands fa-x-twitter"
                                 style="color: #ffffff;"></i></a>
-                        <a href="#" class="social-icon"><i class="fa-brands fa-discord"></i></a>
+                        <a href="https://discord.gg/tD2xDg7kx8" class="social-icon" target="_blank"><i class="fa-brands fa-discord"></i></a>
                         <a href="#" class="social-icon"><i class="fa-brands fa-youtube"></i></a>
                     </div>
                 </div>
