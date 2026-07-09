@@ -3,7 +3,6 @@
    ========================================================= */
 
 /* Global fix to prevent horizontal scroll (khoảng dư bên phải) */
-html,
 body {
     overflow-x: hidden !important;
     max-width: 100%;
