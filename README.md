@@ -1,6 +1,6 @@
 # STRIKE OS Website
 
-![STRIKE OS](https://strikeos.site/assets/logo/logo_S.webp)
+![STRIKE OS](./assets/logo/logo_S.webp)
 
 **Live Demo:** [https://strikeos.site/](https://strikeos.site/)
 
